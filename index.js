@@ -3,7 +3,7 @@
 const url = require('url')
 const https = require('https')
 
-function slackEasyWebhook (link, opts) {
+function SlackEasyWebhook (link, opts) {
   return new Promise((resolve, reject) => {
     if (typeof opts !== 'object' || typeof link !== 'string') {
       return reject(new Error('Missing necessary input parameters'))
@@ -19,7 +19,7 @@ function slackEasyWebhook (link, opts) {
     const postBody = JSON.stringify(opts)
 
     const webhookURL = url.parse(link)
-    const req = new https.request({
+    const req = https.request({
       protocol: webhookURL.protocol,
       hostname: webhookURL.hostname,
       path: webhookURL.pathname,
@@ -37,9 +37,9 @@ function slackEasyWebhook (link, opts) {
     req.end()
 
     req.on('error', (err) => {
-      return reject(err) 
+      return reject(err)
     })
   })
 }
 
-module.exports = slackEasyWebhook
+module.exports = SlackEasyWebhook
