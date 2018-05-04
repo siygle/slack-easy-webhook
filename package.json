@@ -1,0 +1,9 @@
+{
+  "name": "@ferrari/pg-slack-notifier",
+  "version": "1.0.0",
+  "description": "Positive Grid slack channel notifier by incoming webhook.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "SY Lee <shiyung@positivegrid.com>"
+}
